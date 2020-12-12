@@ -2,13 +2,45 @@
 
 Tastyn is an app to create, browse and share recipes with other users.
 
-It is built with:
+Built with:
 
 - Angular
 - Spring Boot
 - PostgreSQL
 - JWT authentication
 - TailwindCSS
+
+## Features
+
+- You can register / sign up as a user to browse recipes
+- Fill up your profile
+- View somebodies profile
+- Add a recipe
+- Upvote / downvote a recipe
+- Leave a comment under a recipe
+
+## Screenshots
+
+Home
+![Home](./screenshots/home.png)
+
+Signup
+![Signup](./screenshots/signup.png)
+
+Login
+![Login](./screenshots/login.png)
+
+Browse through recipes
+![Browse](./screenshots/browse.png)
+
+Recipe details
+![Details](./screenshots/details.png)
+
+Update a recipe
+![Update](./screenshots/update.png)
+
+User profile
+![Profile](./screenshots/profile.png)
 
 ## Installation
 
