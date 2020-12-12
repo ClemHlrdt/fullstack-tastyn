@@ -1,0 +1,37 @@
+// @import "abstracts/variables";
+// @import "abstracts/mixins";
+
+// .form {
+//   margin: 1.5em 0;
+//   @include boxshadow;
+//   border-radius: 15px;
+//   overflow: hidden;
+//   background-color: $color-white;
+
+//   &__comment {
+//     font-size: 1rem;
+//     font-family: inherit;
+//     padding: 2em;
+//     border: none;
+//     resize: none;
+//     outline: none;
+//     display: block;
+//     min-height: 200px;
+//     height: 100%;
+//     width: 100%;
+//     overflow: auto;
+//   }
+
+//   &__footer {
+//     padding: 0.5em 1.5em;
+//     background-color: $color-white;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//   }
+
+//   &__button {
+//     bottom: 15px;
+//     right: 15px;
+//   }
+// }

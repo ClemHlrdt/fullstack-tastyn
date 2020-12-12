@@ -1,0 +1,54 @@
+// @import "abstracts/variables";
+
+// .comments__container {
+//   width: 80%;
+//   margin: 0 auto;
+//   max-width: 1200px;
+// }
+
+// .media {
+//   margin: 1em 0;
+//   padding: 1em;
+//   display: grid;
+//   grid-gap: 0 20px;
+//   align-items: flex-start;
+//   justify-content: flex-start;
+//   grid-template-columns: auto 1fr 200px;
+//   grid-template-areas:
+//     "img username buttons"
+//     "img comment buttons";
+//   background: $color-white-dark;
+//   border-radius: 10px;
+
+//   &__img {
+//     max-width: 100%;
+//     grid-area: img;
+
+//     img {
+//       display: block;
+//     }
+//   }
+
+//   &__buttons {
+//     align-self: flex-start;
+//     justify-self: flex-end;
+//     grid-area: buttons;
+//     display: flex;
+//     flex-direction: column;
+
+//     button:not(last-child) {
+//       margin-bottom: 1em;
+//     }
+//   }
+
+//   &__username {
+//     text-transform: capitalize;
+//     grid-area: username;
+//     font-weight: 500;
+//   }
+
+//   &__content {
+//     grid-area: comment;
+//     font-size: 1rem;
+//   }
+// }

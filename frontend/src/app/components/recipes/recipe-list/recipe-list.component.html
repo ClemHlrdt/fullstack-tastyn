@@ -1,0 +1,42 @@
+<div class="h-full flex flex-col m-8">
+  <app-loading-spinner *ngIf="!isLoaded"></app-loading-spinner>
+  <div class="flex-1">
+    <app-recipe-filter
+      [page]="currentPage"
+      [fields]="['name', 'duration', 'votes']"
+    ></app-recipe-filter>
+
+    <div class="py-8 recipe-list" *ngIf="isLoaded && total > 0">
+      <app-recipe-item
+        *ngFor="
+          let recipe of recipes
+            | paginate
+              : {
+                  currentPage: currentPage,
+                  itemsPerPage: pageSize,
+                  totalItems: total
+                };
+          let i = index
+        "
+        [recipe]="recipe"
+        [index]="i"
+      ></app-recipe-item>
+    </div>
+    <div class="h-full w-full p-16" *ngIf="total === 0">
+      <h2 class="text-gray-600 text-2xl sm:text-4xl text-center mb-8">
+        No recipes yet !
+      </h2>
+      <img
+        class="w-full md:w-1/2 mx-auto"
+        src="/assets/img/undraw_empty.svg"
+        alt="empty illustration"
+      />
+    </div>
+  </div>
+
+  <pagination-controls
+    *ngIf="isLoaded && total > 0"
+    class="pagination justify-self-end flex justify-center p-2 flex-grow-0"
+    (pageChange)="loadRecipes($event)"
+  ></pagination-controls>
+</div>

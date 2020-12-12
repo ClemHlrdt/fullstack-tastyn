@@ -1,0 +1,55 @@
+<div class="mt-8 text-gray-700 bg-gray-200 mx-auto max-w-screen-lg">
+  <div *ngFor="let comment of comments">
+    <div class="flex md:rounded-lg p-6 bg-white mb-4 shadow">
+      <img
+        class="w-16 h-16 rounded-full mx-0 mr-6"
+        src="{{ comment.user.avatar }}"
+        onerror="this.onerror=null;this.src='/assets/img/avatar.png';"
+        alt="Avatar of the user"
+      />
+
+      <div class="text-left flex-1">
+        <h4 class="text-lg capitalize mb-3 text-teal-600 font-medium">
+          {{ comment.user.username }}
+        </h4>
+        <p class="text-md text-gray-600 mr-4">{{ comment.comment }}</p>
+      </div>
+      <div
+        *ngIf="comment.user.id === currentUser.userId"
+        class="flex items-start"
+      >
+        <svg
+          class="w-6 text-gray-500 mr-1 cursor-pointer"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          (click)="onUpdateComment(comment)"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+          />
+        </svg>
+        <svg
+          class="w-6 text-gray-500 cursor-pointer"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          (click)="onDeleteComment(comment)"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <app-new-comment></app-new-comment>
+</div>

@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  postgresdb:
+    image: "postgres:alpine"
+    container_name: db
+    env_file:
+      - "./env/backend.env"
+    volumes:
+      - data:/var/lib/postgresql
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
+
+  front-end:
+    build: ./frontend
+    container_name: frontend
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  data:

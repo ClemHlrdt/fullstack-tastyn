@@ -1,0 +1,62 @@
+<form class="flex md:rounded-lg p-6 bg-white mb-4 shadow items-center">
+  <textarea
+    class="flex-1 resize-none h-full focus:border-0 px-4 py-2 focus:outline-none"
+    autosize
+    name="comment"
+    id="comment"
+    placeholder="New comment"
+    [formControl]="comment"
+  ></textarea>
+  <div class="flex">
+    <button
+      *ngIf="!isUpdate"
+      (click)="onAddComment()"
+      class="btn"
+      type="submit"
+    >
+      Post
+    </button>
+    <button
+      *ngIf="isUpdate"
+      (click)="onUpdateComment()"
+      class="btn mr-2"
+      type="submit"
+    >
+      <svg
+        class="w-4"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    </button>
+    <button
+      *ngIf="isUpdate"
+      (click)="onCancelComment()"
+      class="btn bg-red-500 hover:bg-red-700 border-red-700"
+      type="submit"
+    >
+      <svg
+        class="w-4"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
+</form>

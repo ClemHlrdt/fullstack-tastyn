@@ -1,0 +1,8 @@
+.leftImg {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.leftImg.ng-lazyloaded {
+  opacity: 1;
+}

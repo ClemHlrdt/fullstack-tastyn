@@ -1,0 +1,65 @@
+<app-loading-spinner *ngIf="!isLoaded"></app-loading-spinner>
+<main
+  class="max-w-4xl relative mx-auto text-gray-700 md:px-8 min-h-95 md:py-12"
+  *ngIf="isLoaded"
+>
+  <!-- Recipe Image-->
+  <div class="pb-3/5 relative md:rounded-lg">
+    <img
+      class="absolute w-full h-full object-cover object-center focus:outline-none md:rounded-lg shadow-md"
+      onerror="this.onerror=null;this.src='/assets/img/recipe-placeholder.jpg';"
+      [defaultImage]="defaultImage"
+      [lazyLoad]="recipe.imagePath"
+      alt="recipe image"
+    />
+    <!-- Recipe actions-->
+    <div class="absolute top-0 right-0 p-4" *ngIf="isOwner">
+      <button
+        class="btn bg-teal-600 rounded-full mr-2 shadow-xs"
+        (click)="onUpdate()"
+      >
+        Update
+      </button>
+      <button
+        class="btn bg-red-600 hover:bg-red-700 rounded-full shadow-xs"
+        (click)="onDelete()"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+  <div class="relative -mt-24">
+    <div class="p-8 bg-white md:rounded-b-lg shadow-lg">
+      <div>
+        <!-- Recipe Title-->
+        <h1 class="font-medium font-display text-4xl">
+          {{ recipe.name }}
+        </h1>
+
+        <div
+          class="flex flex-col md:flex-row justify-between flex-wrap items-center"
+        >
+          <!-- Recipe user-->
+          <app-recipe-user [user]="recipe.user"></app-recipe-user>
+          <app-recipe-info [recipe]="recipe"></app-recipe-info>
+          <app-recipe-vote [recipe]="recipe"></app-recipe-vote>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Recipe description-->
+  <div class="relative mt-10 md:rounded-lg p-12 bg-white shadow-md">
+    <h2 class="text-2xl font-bold text-teal-500 mb-4">Preparation</h2>
+    <p class="text-justify">
+      {{ recipe.preparation }}
+    </p>
+    <div class="border-b border-gray-200 m-6"></div>
+    <h2 class="text-2xl font-bold text-teal-500 mb-4">Ingredients</h2>
+    <ul class="">
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.amount }} - {{ ingredient.name }}
+      </li>
+    </ul>
+  </div>
+  <app-comments></app-comments>
+</main>

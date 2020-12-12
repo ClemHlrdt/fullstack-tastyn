@@ -1,0 +1,16 @@
+<div
+  routerLink="/users/{{ user.id }}"
+  class="flex justify-start items-center cursor-pointer focus:outline-none mt-4"
+>
+  <img
+    class="imgCard w-10 h-10 rounded-full mr-4 object-cover bg-gray-300"
+    alt="{{ user.username }}"
+    [src]="user.avatar"
+    onerror="this.onerror=null;this.src='/assets/img/avatar.png';"
+    (load)="addLoaded($event)"
+  />
+  <div class="text-sm">
+    <p class="text-gray-900 leading-none">Recipe by {{ user.username }}</p>
+    <p class="text-gray-600">{{ user.createdAt | dateRelative }} ago</p>
+  </div>
+</div>

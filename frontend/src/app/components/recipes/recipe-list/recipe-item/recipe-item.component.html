@@ -1,0 +1,47 @@
+<div
+  class="cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex flex-col justify-between"
+>
+  <div class="pb-5/6 relative rounded-lg">
+    <img
+      #img
+      class="imgCard absolute w-full h-full object-cover object-center focus:outline-none rounded-lg shadow-md"
+      alt="{{ recipe.name }}"
+      [src]="recipe.imagePath"
+      onerror="this.onerror=null;this.src='/assets/img/recipe-placeholder.jpg';"
+      (load)="addLoaded($event)"
+      [routerLink]="'/recipes/' + recipe.id"
+    />
+  </div>
+  <div class="relative px-4 -mt-16">
+    <div class="p-6 bg-white shadow-lg hover:shadow-xl rounded-lg">
+      <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">
+        {{ recipe.duration }} mins &bull;
+        {{ recipe.ingredients | recipeCounter }} &bull;
+        {{ recipe.serving | recipeServing }}
+      </div>
+      <h4
+        class="font-semibold text-lg leading-tight focus:outline-none mt-4"
+        [routerLink]="'/recipes/' + recipe.id"
+      >
+        {{ recipe.name | titleShortener: 20 }}
+      </h4>
+      <div class="flex items-center mt-4">
+        <svg
+          class="w-4 h-4 text-pink-600 fill-current mr-2"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+          />
+        </svg>
+        <span>{{ recipe.votes }} likes</span>
+      </div>
+    </div>
+  </div>
+</div>

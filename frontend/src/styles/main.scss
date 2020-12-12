@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .btn {
+    @apply bg-teal-500 text-white font-bold py-2 px-4 text-sm rounded;
+  }
+
+  .btn:hover {
+    @apply bg-teal-700;
+  }
+
+  .btn:focus {
+    @apply outline-none shadow-outline border-teal-300;
+  }
+}

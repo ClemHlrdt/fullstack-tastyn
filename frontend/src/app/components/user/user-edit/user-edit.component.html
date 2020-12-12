@@ -1,0 +1,95 @@
+<div *ngIf="!isLoaded" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="isLoaded" class="flex min-h-95 p-8">
+  <div
+    class="container mx-auto bg-white lg:w-3/5 text-gray-900 py-12 px-8 rounded shadow"
+  >
+    <h1 class="text-center text-4xl mb-4">
+      Update profile
+    </h1>
+
+    <div class="flex flex-col items-center">
+      <img
+        onerror="this.onerror=null;this.src='/assets/img/avatar.png';"
+        class="block max-w-xs w-48 h-48 object-cover mb-8 mx-auto rounded-full"
+        src="{{ user.avatar }}"
+        alt="user profile picture"
+      />
+      <div *ngIf="isOwner">
+        <button
+          class="inline-block text-sm text-center -mt-4 mb-4 border-b p-2 rounded border-gray-300 hover:text-white hover:bg-gray-800"
+          (click)="onClick()"
+        >
+          Change profile image
+        </button>
+
+        <input
+          type="file"
+          #fileUpload
+          id="fileUpload"
+          accept="image/*"
+          style="display: none;"
+        />
+      </div>
+    </div>
+
+    <form
+      class="mx-auto w-full max-w-xl min-w-min-content"
+      [formGroup]="userForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <!--Username -->
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-4 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-username"
+          >
+            Username
+          </label>
+          <input
+            formControlName="username"
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-username"
+            type="text"
+            placeholder="JohnDoe"
+          />
+          <!-- <p class="text-red-500 text-xs italic">
+              Please fill out this field.
+            </p> -->
+        </div>
+      </div>
+      <!-- Preparation -->
+      <div class="flex -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="description"
+            >Description</label
+          >
+          <textarea
+            formControlName="description"
+            class="w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 resize-none"
+            name="description"
+            id="description"
+            rows="8"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-start">
+        <button
+          class="btn"
+          type="submit"
+          [ngClass]="{
+            'opacity-50 cursor-not-allowed': userForm.status !== 'VALID'
+          }"
+          [disabled]="userForm.status !== 'VALID'"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

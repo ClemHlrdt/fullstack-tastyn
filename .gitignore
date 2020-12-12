@@ -1,0 +1,60 @@
+# Frontend
+
+node_modules
+dist/
+
+.DS_Store
+
+.vscode/settings.json
+.vscode/launch.json
+
+## Backend
+
+.mvn/**
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+### MacOS related ###
+.DS_Store
+
+### Logs ###
+spring-boot-logger*
+spring-boot-logger.log
+logs/*
+
+# MySQL Workbench files
+*.mwb
+*.mwb.*
+
+# Static assets
+static/*
