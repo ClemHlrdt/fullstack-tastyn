@@ -21,25 +21,32 @@ Built with:
 
 ## Screenshots
 
-Home
+### Home
+
 ![Home](./screenshots/home.png)
 
-Signup
+### Signup
+
 ![Signup](./screenshots/signup.png)
 
-Login
+### Login
+
 ![Login](./screenshots/login.png)
 
-Browse through recipes
+### Browse through recipes
+
 ![Browse](./screenshots/browse.png)
 
-Recipe details
+### Recipe details
+
 ![Details](./screenshots/details.png)
 
-Update a recipe
+### Update a recipe
+
 ![Update](./screenshots/update.png)
 
-User profile
+### User profile
+
 ![Profile](./screenshots/profile.png)
 
 ## Installation
