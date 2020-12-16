@@ -10,8 +10,9 @@ import { CoreModule } from './core.module';
 import { AppRoutingModule } from './router/app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, NotFoundComponent],
   imports: [
     CoreModule,
     BrowserModule,
