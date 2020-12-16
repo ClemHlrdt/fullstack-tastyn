@@ -14,6 +14,7 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { DifficultyPipe } from '../pipes/difficulty.pipe';
 import { DateRelativePipe } from '../pipes/date-relative.pipe';
 import { TitleShortenerPipe } from '../pipes/title-shortener.pipe';
+import { HoverClassDirective } from '../directives/hover-class.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TitleShortenerPipe } from '../pipes/title-shortener.pipe';
     DifficultyPipe,
     DateRelativePipe,
     TitleShortenerPipe,
+    HoverClassDirective,
   ],
   imports: [
     CommonModule,
@@ -46,6 +48,7 @@ import { TitleShortenerPipe } from '../pipes/title-shortener.pipe';
     DifficultyPipe,
     DateRelativePipe,
     TitleShortenerPipe,
+    HoverClassDirective,
   ],
   providers: [],
 })
