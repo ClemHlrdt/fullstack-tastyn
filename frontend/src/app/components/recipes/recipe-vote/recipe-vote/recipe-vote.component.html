@@ -1,6 +1,7 @@
 <div class="flex items-center mt-4">
   <button
     class="focus:outline-none hover:text-green-400"
+    hover-class="arrowBounce"
     (click)="handleUpvote()"
   >
     <svg
@@ -22,6 +23,7 @@
   <span class="font-semibold text-center px-2">{{ votes }}</span>
   <button
     class="focus:outline-none hover:text-red-400"
+    hover-class="arrowBounce"
     (click)="handleDownVote()"
   >
     <svg
