@@ -5,11 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "NODE_ENV=production ng build",
-    "build:stats": "NODE_ENV=production ng build --stats-json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "analyze": "webpack-bundle-analyzer dist/tastyn/stats.json",
     "build:prod": "NODE_ENV=production ng build --prod"
   },
   "private": true,
