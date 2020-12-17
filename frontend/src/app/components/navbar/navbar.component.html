@@ -1,13 +1,15 @@
-<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-  <div class="flex items-center flex-shrink-0 text-white mr-6">
+<nav
+  class="flex items-center justify-between flex-wrap bg-teal-500 py-6 relative z-10"
+>
+  <div class="flex items-center flex-shrink-0 text-white mr-6 pl-6">
     <a class="nav__brand" routerLink="/">
       <img class="h-8 mr-2" src="/assets/img/logo.png" alt="tastyn logo" />
     </a>
   </div>
-  <div class="block lg:hidden">
+  <div class="block lg:hidden pr-6">
     <button
       (click)="onOpen()"
-      class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
+      class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white focus:outline-none"
     >
       <svg
         class="fill-current h-3 w-3"
@@ -21,8 +23,8 @@
   </div>
 
   <div
-    class="w-full block flex-grow lg:flex lg:items-center lg:w-auto"
-    [ngClass]="{ hidden: !isOpen }"
+    class="w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:opacity-100 relative lg:relative px-6 nav-closed"
+    [ngClass]="{ 'nav-opened': isOpen }"
   >
     <div class="text-sm lg:flex-grow">
       <a
@@ -60,7 +62,9 @@
         My recipes
       </a>
     </div>
-    <div class="w-full block lg:flex lg:items-center lg:w-auto">
+    <div
+      class="w-full block lg:flex lg:items-center lg:w-auto pt-4 pb-2 lg:py-0"
+    >
       <a
         routerLinkActive="nav__link--active"
         routerLink="/auth/signup"
