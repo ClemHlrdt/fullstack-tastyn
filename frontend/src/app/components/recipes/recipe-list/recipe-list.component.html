@@ -6,7 +6,11 @@
       [fields]="['name', 'duration', 'votes']"
     ></app-recipe-filter>
 
-    <div class="py-8 recipe-list" *ngIf="isLoaded && total > 0">
+    <div
+      class="py-8 recipe-list"
+      *ngIf="isLoaded && total > 0"
+      [@listAnimation]="recipes.length"
+    >
       <app-recipe-item
         *ngFor="
           let recipe of recipes
