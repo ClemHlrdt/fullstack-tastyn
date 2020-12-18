@@ -29,11 +29,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.breakpointObserver
       .observe(['(min-width: 1024px)'])
       .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          this.isOpen = true;
-        } else {
-          this.isOpen = false;
-        }
+        state.matches ? (this.isOpen = true) : (this.isOpen = false);
       });
 
     let authSub = this.authService.auth.subscribe((auth: Authentication) => {
