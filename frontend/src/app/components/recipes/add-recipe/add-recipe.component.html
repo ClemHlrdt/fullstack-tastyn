@@ -9,8 +9,12 @@
   />
 
   <div class="bg-white container mx-auto lg:w-3/5 text-gray-900 p-6">
-    <h1 class="text-center text-4xl mb-4" *ngIf="!isEditMode">New Recipe</h1>
-    <h1 class="text-center text-4xl mb-4" *ngIf="isEditMode">Update recipe</h1>
+    <h1 class="text-center text-5xl mt-4 mb-8 font-light" *ngIf="!isEditMode">
+      New Recipe
+    </h1>
+    <h1 class="text-center text-5xl mt-4 mb-8 font-light" *ngIf="isEditMode">
+      Update relight
+    </h1>
     <form
       class="mx-auto w-full max-w-xl min-w-min-content"
       [formGroup]="recipe"
