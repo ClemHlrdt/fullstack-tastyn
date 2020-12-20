@@ -6,14 +6,49 @@ module.exports = {
   purge: ['./src/**/*.html', './src/**/*.ts'],
   theme: {
     colors: {
-      teal: colors.teal,
-      white: colors.white,
-      gray: colors.gray,
-      red: colors.red,
       green: colors.green,
+      white: colors.white,
+      beige: {
+        50: "#fdf3e7",
+        100: "#f9dcb8",
+        200: "#f5c489",
+        300: "#f1ad5a",
+        400: "#ed952b",
+        500: "#d47c12",
+        600: "#a5600e",
+        700: "#76450a",
+        800: "#472906",
+        900: "#180e02"
+      },
+      gray: colors.gray,
+      red: {
+        50: "#faebef",
+        100: "#f0c2ce",
+        200: "#e699ad",
+        300: "#db708c",
+        400: "#d1476b",
+        500: "#b82e51",
+        600: "#8f243f",
+        700: "#66192d",
+        800: "#3d0f1b",
+        900: "#140509"
+      },
+      green: {
+        50: "#eafaf5",
+        100: "#c0f1e0",
+        200: "#97e8cb",
+        300: "#6ddfb6",
+        400: "#43d5a2",
+        500: "#2abc88",
+        600: "#20926a",
+        700: "#17684c",
+        800: "#0e3f2d",
+        900: "#05150f"
+      },
       pink: colors.pink,
       black: colors.black,
-      purple: colors.purple
+      purple: colors.purple,
+      blue: colors.blue
     },
     extend: {
       spacing: {
