@@ -21,12 +21,16 @@
   <div class="flex mb-4">
     <div class="relative mr-2">
       <button
-        #sort
+        #sortBtn
         (click)="onClick('sort')"
-        [ngClass]="{ 'bg-green-600': isSortOpen, 'text-white': isSortOpen }"
-        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 outline-none"
+        [ngClass]="{
+          'bg-green-600': isSortOpen,
+          'text-white': isSortOpen,
+          'border-green-400': sort != null
+        }"
+        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
-        Sort by
+        Sort by {{ sort }}
       </button>
       <ul
         *ngIf="isSortOpen"
@@ -43,12 +47,16 @@
     </div>
     <div class="relative">
       <button
-        #order
+        #orderBtn
         (click)="onClick('order')"
-        [ngClass]="{ 'bg-green-600': isOrderOpen, 'text-white': isOrderOpen }"
-        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 outline-none"
+        [ngClass]="{
+          'bg-green-600': isOrderOpen,
+          'text-white': isOrderOpen,
+          'border-green-400': order != null
+        }"
+        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
-        Order by
+        Order by {{ order }}
       </button>
       <ul
         *ngIf="isOrderOpen"
