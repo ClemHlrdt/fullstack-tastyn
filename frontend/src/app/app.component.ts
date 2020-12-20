@@ -30,11 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      console.log('will be dark');
-
       document.querySelector('html').classList.add('dark');
     } else {
-      console.log('will be light');
       document.querySelector('html').classList.remove('dark');
     }
   }

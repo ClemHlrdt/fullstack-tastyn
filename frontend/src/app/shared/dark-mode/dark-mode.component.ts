@@ -7,15 +7,12 @@ import { DarkModeService } from '../../services/dark-mode/dark-mode.service';
   styleUrls: ['./dark-mode.component.scss'],
 })
 export class DarkModeComponent implements OnInit {
-  //isDarkMode: boolean = false;
+  isDarkMode: boolean;
 
   constructor(private darkModeService: DarkModeService) {}
 
   ngOnInit(): void {
-    let theme: string = localStorage.getItem('theme');
-    theme == 'dark' || theme == null
-      ? (this.darkModeService.isDarkMode = true)
-      : (this.darkModeService.isDarkMode = false);
+    this.isDarkMode = this.darkModeService.isDarkMode;
   }
 
   handleClick() {
