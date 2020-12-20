@@ -14,11 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService) {}
   ngOnInit() {
     this.authService.autoLogin();
-    if (isDevMode()) {
-      console.log('Development!');
-    } else {
-      console.log('Cool. Production!');
-    }
+    this.enableDarkMode();
   }
 
   prepareRoute(outlet: RouterOutlet) {
@@ -26,4 +22,20 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {}
+
+  enableDarkMode() {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      console.log('will be dark');
+
+      document.querySelector('html').classList.add('dark');
+    } else {
+      console.log('will be light');
+      document.querySelector('html').classList.remove('dark');
+    }
+  }
 }

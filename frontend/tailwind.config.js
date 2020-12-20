@@ -4,7 +4,7 @@ const enablePurge = process.env.ENABLE_PURGE || false;
 
 module.exports = {
   purge: ['./src/**/*.html', './src/**/*.ts'],
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     colors: {
       green: colors.green,

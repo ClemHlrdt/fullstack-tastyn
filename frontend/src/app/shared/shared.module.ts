@@ -15,6 +15,7 @@ import { DifficultyPipe } from '../pipes/difficulty.pipe';
 import { DateRelativePipe } from '../pipes/date-relative.pipe';
 import { TitleShortenerPipe } from '../pipes/title-shortener.pipe';
 import { HoverClassDirective } from '../directives/hover-class.directive';
+import { DarkModeComponent } from './dark-mode/dark-mode.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HoverClassDirective } from '../directives/hover-class.directive';
     DateRelativePipe,
     TitleShortenerPipe,
     HoverClassDirective,
+    DarkModeComponent,
   ],
   imports: [
     CommonModule,
@@ -49,6 +51,7 @@ import { HoverClassDirective } from '../directives/hover-class.directive';
     DateRelativePipe,
     TitleShortenerPipe,
     HoverClassDirective,
+    DarkModeComponent,
   ],
   providers: [],
 })
