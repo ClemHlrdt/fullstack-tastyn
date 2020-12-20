@@ -12,6 +12,6 @@
   }
 
   .btn:focus {
-    @apply outline-none shadow-outline border-teal-300;
+    @apply outline-none ring border-teal-300;
   }
 }

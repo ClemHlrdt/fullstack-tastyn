@@ -1,8 +1,20 @@
+const colors = require('tailwindcss/colors')
+
 const enablePurge = process.env.ENABLE_PURGE || false;
 
 module.exports = {
   purge: ['./src/**/*.html', './src/**/*.ts'],
   theme: {
+    colors: {
+      teal: colors.teal,
+      white: colors.white,
+      gray: colors.gray,
+      red: colors.red,
+      green: colors.green,
+      pink: colors.pink,
+      black: colors.black,
+      purple: colors.purple
+    },
     extend: {
       spacing: {
         '1/2': '50%',
@@ -34,11 +46,7 @@ module.exports = {
       },
       height: theme => ({
         "90": "90vh",
-        "95": "95vh",
-        "screen/2": "50vh",
-        "screen/3": "calc(100vh / 3)",
-        "screen/4": "calc(100vh / 4)",
-        "screen/5": "calc(100vh / 5)",
+        "95": "95vh"
       }),
       minHeight: theme => ({
         "90": "90vh",

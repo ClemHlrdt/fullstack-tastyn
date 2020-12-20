@@ -21,7 +21,7 @@
         </label>
         <input
           formControlName="username"
-          class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:ring"
           [ngClass]="{
             'border-red-500': username.invalid && username.touched
           }"
@@ -43,7 +43,7 @@
         </label>
         <input
           formControlName="email"
-          class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 px-3 mb-3 text-gray-700 leading-tight focus:outline-none focus:ring"
           [ngClass]="{
             'border-red-500': email.invalid && email.touched
           }"
@@ -68,7 +68,7 @@
         </label>
         <input
           formControlName="password"
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:ring"
           [ngClass]="{
             ' border-red-500': password.invalid && password.touched
           }"
@@ -86,7 +86,7 @@
       </div>
       <div class="flex items-center justify-between">
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring"
           type="submit"
           [disabled]="this.form.invalid"
           [ngClass]="{
