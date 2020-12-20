@@ -15,7 +15,7 @@
     <!-- Recipe actions-->
     <div class="absolute top-0 right-0 p-4" *ngIf="isOwner">
       <button
-        class="btn bg-teal-600 rounded-full mr-2 shadow-xs"
+        class="btn bg-green-600 rounded-full mr-2 shadow-xs"
         (click)="onUpdate()"
       >
         Update
@@ -49,12 +49,12 @@
   </div>
   <!-- Recipe description-->
   <div class="relative mt-10 md:rounded-lg p-12 bg-white shadow-md">
-    <h2 class="text-2xl font-bold text-teal-500 mb-4">Preparation</h2>
+    <h2 class="text-2xl font-bold text-green-500 mb-4">Preparation</h2>
     <p class="text-justify">
       {{ recipe.preparation }}
     </p>
     <div class="border-b border-gray-200 m-6"></div>
-    <h2 class="text-2xl font-bold text-teal-500 mb-4">Ingredients</h2>
+    <h2 class="text-2xl font-bold text-green-500 mb-4">Ingredients</h2>
     <ul class="">
       <li *ngFor="let ingredient of recipe.ingredients">
         {{ ingredient.amount }} - {{ ingredient.name }}
