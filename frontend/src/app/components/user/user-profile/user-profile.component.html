@@ -1,7 +1,10 @@
 <app-loading-spinner *ngIf="!isLoaded"></app-loading-spinner>
-<div *ngIf="isLoaded" class="text-gray-800 lg:flex lg:mx-16 px-4 md:px-0">
+<div
+  *ngIf="isLoaded"
+  class="text-gray-800 dark:text-gray-300 lg:flex lg:mx-16 px-4 md:px-0"
+>
   <section
-    class="bg-white m-8 p-8 md:px-24 lg:px-8 shadow rounded-lg max-w-md self-start mx-auto"
+    class="bg-white dark:bg-gray-900 m-8 p-8 md:px-24 lg:px-8 shadow rounded-lg max-w-md self-start mx-auto"
   >
     <div class="flex flex-col items-center">
       <img
@@ -20,21 +23,23 @@
       </div>
     </div>
     <div class="max-w-xs">
-      <h2 class="text-gray-800 text-lg font-semibold capitalize mb-3">
+      <h2
+        class="text-gray-800 dark:text-gray-100 text-lg font-semibold capitalize mb-3"
+      >
         {{ user.username }}
       </h2>
       <p
         *ngIf="user.description; else noDescription"
-        class="text-xs lg:text-sm text-gray-600 w-48 mb-3"
+        class="text-xs lg:text-sm text-gray-600 w-48 mb-3 dark:text-gray-300"
       >
         {{ user.description }}
       </p>
       <ng-template #noDescription
-        ><p class="text-xs text-gray-600 w-48 mb-3">
+        ><p class="text-xs text-gray-600 w-48 mb-3 dark:text-gray-300">
           No description yet!
         </p></ng-template
       >
-      <div class="border-b-2 border-gray-200 m-4"></div>
+      <div class="border-b-2 border-gray-200 m-4 dark:border-gray-800"></div>
       <div class="flex justify-between items-center mb-4">
         <div class="bg-green-400 rounded-full p-2 mr-4">
           <svg
@@ -53,7 +58,7 @@
           </svg>
         </div>
         <div class="flex flex-col text-xs flex-1">
-          <span class="text-gray-600">Email</span>
+          <span class="text-gray-600 dark:text-gray-200">Email</span>
           <p>{{ user.email }}</p>
         </div>
       </div>
@@ -76,7 +81,9 @@
           </svg>
         </div>
         <div class="flex flex-col text-xs flex-1">
-          <span class="text-gray-600">Number of recipes</span>
+          <span class="text-gray-600 dark:text-gray-200"
+            >Number of recipes</span
+          >
           <p>{{ recipeCount }}</p>
         </div>
       </div>
@@ -99,7 +106,7 @@
           </svg>
         </div>
         <div class="flex flex-col text-xs flex-1">
-          <span class="text-gray-600">Member since</span>
+          <span class="text-gray-600 dark:text-gray-200">Member since</span>
           <p>{{ user.createdAt | dateYearMonth }}</p>
         </div>
       </div>

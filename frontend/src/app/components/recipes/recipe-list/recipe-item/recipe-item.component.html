@@ -13,7 +13,9 @@
     />
   </div>
   <div class="relative px-4 -mt-16">
-    <div class="p-6 bg-white shadow-lg hover:shadow-xl rounded-lg">
+    <div
+      class="p-6 bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl rounded-lg"
+    >
       <h4
         class="font-semibold text-lg leading-tight focus:outline-none"
         [routerLink]="'/recipes/' + recipe.id"
@@ -21,7 +23,7 @@
         {{ recipe.name | titleShortener: 20 }}
       </h4>
       <div
-        class="mt-4 text-gray-600 text-xs uppercase font-semibold tracking-wide"
+        class="mt-4 text-gray-600 dark:text-gray-200 text-xs uppercase font-semibold tracking-wide"
       >
         {{ recipe.duration }} mins &bull;
         {{ recipe.ingredients | recipeCounter }} &bull;

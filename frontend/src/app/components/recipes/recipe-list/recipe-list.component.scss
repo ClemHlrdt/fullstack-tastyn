@@ -9,5 +9,19 @@
 }
 
 .pagination ::ng-deep .ngx-pagination .current {
-  background-color: #38b2ac;
+  background-color: #21956c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination ::ng-deep .ngx-pagination .current {
+    background-color: #21956c;
+  }
+
+  .pagination ::ng-deep .ngx-pagination a.ng-star-inserted {
+    color: white;
+
+    &:hover {
+      background-color: black;
+    }
+  }
 }

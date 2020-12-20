@@ -29,10 +29,12 @@
     </div>
   </div>
   <div class="relative -mt-24">
-    <div class="px-16 py-12 bg-white md:rounded-b-lg shadow-lg">
+    <div
+      class="px-16 py-12 bg-white dark:bg-gray-900 md:rounded-b-lg shadow-lg"
+    >
       <div>
         <!-- Recipe Title-->
-        <h1 class="font-medium font-display text-4xl">
+        <h1 class="font-medium font-display text-4xl dark:text-white">
           {{ recipe.name }}
         </h1>
 
@@ -48,15 +50,26 @@
     </div>
   </div>
   <!-- Recipe description-->
-  <div class="relative mt-10 md:rounded-lg p-16 bg-white shadow-md">
-    <h2 class="text-2xl font-bold text-gray-700 mb-4">Preparation</h2>
-    <p class="text-justify leading-6 text-gray-500 max-w-2xl">
+  <div
+    class="relative mt-10 md:rounded-lg p-16 bg-white dark:bg-gray-900 shadow-md"
+  >
+    <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-200 mb-4">
+      Preparation
+    </h2>
+    <p
+      class="text-justify leading-6 text-gray-500 max-w-2xl dark:text-gray-300"
+    >
       {{ recipe.preparation }}
     </p>
     <div class="border-b border-gray-200 m-6"></div>
-    <h2 class="text-2xl font-bold text-gray-700 mb-4">Ingredients</h2>
+    <h2 class="text-2xl font-bold text-gray-700 mb-4 dark:text-gray-200">
+      Ingredients
+    </h2>
     <ul class="">
-      <li *ngFor="let ingredient of recipe.ingredients">
+      <li
+        class="dark:text-gray-300"
+        *ngFor="let ingredient of recipe.ingredients"
+      >
         {{ ingredient.amount }} - {{ ingredient.name }}
       </li>
     </ul>

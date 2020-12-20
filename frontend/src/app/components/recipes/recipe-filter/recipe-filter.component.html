@@ -1,8 +1,12 @@
 <div class="mx-auto w-90 flex items-center justify-between flex-wrap">
   <div
-    class="flex items-center bg-white rounded-lg px-4 py-2 border-2 focus-within:border-green-400 w-full max-w-xl mb-4 hover:shadow-xs transition-all duration-300"
+    class="flex items-center bg-white dark:bg-gray-800 rounded-lg px-4 py-2 border-2 focus-within:border-green-400 w-full max-w-xl mb-4 hover:shadow-xs transition-all duration-300"
   >
-    <input class="outline-none w-full" placeholder="Search" #input />
+    <input
+      class="outline-none w-full dark:bg-gray-800"
+      placeholder="Search"
+      #input
+    />
     <svg
       class="w-4 h-4 text-green-400"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,13 +32,13 @@
           'text-white': isSortOpen,
           'border-green-400': sort != null
         }"
-        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
+        class="block rounded-lg border-2 bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
         Sort by {{ sort }}
       </button>
       <ul
         *ngIf="isSortOpen"
-        class="absolute z-10 top-10 left-0 bg-white rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
+        class="absolute z-10 top-10 left-0 bg-white dark:bg-gray-800 rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
       >
         <li
           *ngFor="let field of fields; let i = index"
@@ -54,13 +58,13 @@
           'text-white': isOrderOpen,
           'border-green-400': order != null
         }"
-        class="block rounded-lg border-2 bg-white text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
+        class="block rounded-lg border-2 bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
         Order by {{ order }}
       </button>
       <ul
         *ngIf="isOrderOpen"
-        class="absolute z-10 top-10 left-0 bg-white rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
+        class="absolute z-10 top-10 left-0 bg-white dark:bg-gray-800 rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
       >
         <li
           (click)="setOrder(0)"

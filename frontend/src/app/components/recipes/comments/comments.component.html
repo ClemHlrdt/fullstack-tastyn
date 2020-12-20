@@ -1,6 +1,6 @@
-<div class="mt-8 text-gray-700 bg-gray-200 mx-auto max-w-screen-lg">
+<div class="mt-8 text-gray-700 mx-auto max-w-screen-lg">
   <div *ngFor="let comment of comments">
-    <div class="flex md:rounded-lg p-6 bg-white mb-4 shadow">
+    <div class="flex md:rounded-lg p-6 bg-white mb-4 shadow dark:bg-gray-900">
       <img
         class="w-16 h-16 rounded-full mx-0 mr-6"
         src="{{ comment.user.avatar }}"
@@ -9,10 +9,14 @@
       />
 
       <div class="text-left flex-1">
-        <h4 class="text-lg capitalize mb-3 text-green-600 font-medium">
+        <h4
+          class="text-lg capitalize mb-3 text-gray-600 font-medium dark:text-gray-100"
+        >
           {{ comment.user.username }}
         </h4>
-        <p class="text-md text-gray-600 mr-4">{{ comment.comment }}</p>
+        <p class="text-md text-gray-600 mr-4 dark:text-gray-300">
+          {{ comment.comment }}
+        </p>
       </div>
       <div
         *ngIf="comment.user.id === currentUser.userId"
