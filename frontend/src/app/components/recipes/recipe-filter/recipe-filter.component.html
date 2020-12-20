@@ -43,7 +43,7 @@
         <li
           *ngFor="let field of fields; let i = index"
           (click)="setSort(i)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between"
+          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
         >
           <span class="pr-4 capitalize">{{ field }}</span>
         </li>
@@ -68,13 +68,13 @@
       >
         <li
           (click)="setOrder(0)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between"
+          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
         >
           <span class="pr-4 capitalize">Ascending</span>
         </li>
         <li
           (click)="setOrder(1)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between"
+          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
         >
           <span class="pr-4 capitalize">Descending</span>
         </li>
