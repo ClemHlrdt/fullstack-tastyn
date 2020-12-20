@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { DarkModeService } from '../../services/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode',
@@ -7,26 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./dark-mode.component.scss'],
 })
 export class DarkModeComponent implements OnInit {
-  isDarkMode: boolean = false;
+  //isDarkMode: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private darkModeService: DarkModeService) {}
 
   ngOnInit(): void {
     let theme: string = localStorage.getItem('theme');
     theme == 'dark' || theme == null
-      ? (this.isDarkMode = true)
-      : (this.isDarkMode = false);
+      ? (this.darkModeService.isDarkMode = true)
+      : (this.darkModeService.isDarkMode = false);
   }
 
   handleClick() {
-    this.isDarkMode = !this.isDarkMode;
-    this.modifyMode();
-  }
-
-  modifyMode() {
-    this.isDarkMode
-      ? (localStorage.theme = 'dark')
-      : (localStorage.theme = 'light');
-    location.reload();
+    this.darkModeService.modifyMode();
   }
 }

@@ -43,6 +43,7 @@
   <pagination-controls
     *ngIf="isLoaded && total > 0"
     class="pagination justify-self-end flex justify-center p-2 flex-grow-0"
+    [ngClass]="{ dark: isDark }"
     (pageChange)="loadRecipes($event)"
   ></pagination-controls>
 </div>

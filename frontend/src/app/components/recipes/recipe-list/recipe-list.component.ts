@@ -13,6 +13,7 @@ import {
   query,
   stagger,
 } from '@angular/animations';
+import { DarkModeService } from 'src/app/services/dark-mode/dark-mode.service';
 
 const listAnimation = trigger('listAnimation', [
   transition('* <=> *', [
@@ -43,18 +44,21 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   pageSize: number = 20;
   total: number;
   isLoaded: boolean = false;
+  isDark: boolean = false;
 
   private subscriptions: Subscription[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private recipesService: RecipesService
+    private recipesService: RecipesService,
+    private darkModeService: DarkModeService
   ) {}
 
   ngOnInit(): void {
     this.recipesService.setFilter(null);
     this.loadRecipes(this.currentPage);
+    this.isDark = this.darkModeService.isDarkMode;
   }
 
   loadRecipes(page) {
