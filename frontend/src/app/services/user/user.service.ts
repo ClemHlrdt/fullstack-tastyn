@@ -34,4 +34,8 @@ export class UserService {
 
     return this.http.post(`/api/users/${user.id}/upload`, formData);
   }
+
+  deleteUser(user: User) {
+    return this.dataStorageService.deleteUser(user);
+  }
 }

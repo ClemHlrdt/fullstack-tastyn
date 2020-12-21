@@ -12,6 +12,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { Authentication } from 'src/app/models/authentication.model';
 import { User } from 'src/app/models/user.model';
@@ -45,7 +46,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private uploadService: UploadService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -127,6 +129,20 @@ export class UserEditComponent implements OnInit, OnDestroy {
         this.router.navigate(['/users', this.user.id]);
       },
       (err) => console.log(err)
+    );
+  }
+
+  onDelete() {
+    this.isLoaded = false;
+    this.userService.deleteUser(this.user).subscribe(
+      (data) => {
+        this.authService.logout();
+        this.toastr.success('User removed successfully!');
+        this.router.navigate(['/']);
+      },
+      (err) => {
+        this.toastr.error(err);
+      }
     );
   }
 

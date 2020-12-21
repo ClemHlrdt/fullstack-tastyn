@@ -20,6 +20,10 @@ export class DataStorageService {
     return this.http.patch<User>(`/api/users/${id}`, user);
   }
 
+  deleteUser(user: User) {
+    return this.http.delete(`/api/users/${user.id}`);
+  }
+
   storeRecipes(recipe: Recipe) {
     return this.http.post<RecipeResponse>(`/api/recipes`, recipe);
   }

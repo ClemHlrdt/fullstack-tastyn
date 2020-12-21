@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="flex justify-center md:justify-start">
+      <div class="flex justify-between">
         <button
           class="btn"
           type="submit"
@@ -85,7 +85,14 @@
           }"
           [disabled]="userForm.status !== 'VALID'"
         >
-          Submit
+          Update
+        </button>
+        <button
+          type="button"
+          (click)="onDelete()"
+          class="btn bg-red-500 hover:bg-red-300"
+        >
+          Delete profile
         </button>
       </div>
     </form>
