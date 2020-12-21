@@ -1,12 +1,15 @@
 package com.clemhlrdt.recipeapp.controllers;
 
+import com.clemhlrdt.recipeapp.dto.UserDto;
 import com.clemhlrdt.recipeapp.model.User;
 import com.clemhlrdt.recipeapp.payload.JwtAuthenticationResponse;
 import com.clemhlrdt.recipeapp.payload.LoginRequest;
+import com.clemhlrdt.recipeapp.payload.PasswordUpdateRequest;
 import com.clemhlrdt.recipeapp.payload.SignUpRequest;
 import com.clemhlrdt.recipeapp.repository.UserRepository;
 import com.clemhlrdt.recipeapp.service.AuthenticationService;
 import com.clemhlrdt.recipeapp.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,4 +58,12 @@ public class AuthController {
 
 		return ResponseEntity.ok(jwtAuthenticationResponse);
 	}
+
+	@PostMapping("/updatepassword")
+	public ResponseEntity<UserDto> updateUserPassword(@Valid @RequestBody PasswordUpdateRequest passwordUpdateRequest){
+		return ResponseEntity
+						.status(HttpStatus.OK)
+						.body(authenticationService.updateUserPassword(passwordUpdateRequest));
+	}
+
 }
