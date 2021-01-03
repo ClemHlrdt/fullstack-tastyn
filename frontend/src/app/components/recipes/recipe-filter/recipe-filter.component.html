@@ -1,9 +1,9 @@
-<div class="mx-auto w-90 flex items-center justify-between flex-wrap">
+<div class="flex flex-wrap items-center justify-between mx-auto w-90">
   <div
-    class="flex items-center bg-white dark:bg-gray-800 rounded-lg px-4 py-2 border-2 focus-within:border-green-400 w-full max-w-xl mb-4 hover:shadow-xs transition-all duration-300"
+    class="flex items-center w-full max-w-xl px-4 py-2 mb-4 bg-white border-2 rounded-lg dark:bg-gray-800 focus-within:border-green-400 hover:shadow-xs transition-all duration-300"
   >
     <input
-      class="outline-none w-full dark:bg-gray-800"
+      class="w-full outline-none dark:bg-gray-800"
       placeholder="Search"
       #input
     />
@@ -32,18 +32,18 @@
           'text-white': isSortOpen,
           'border-green-400': sort != null
         }"
-        class="block rounded-lg border-2 bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
+        class="block px-4 py-2 text-sm text-gray-400 bg-white border-2 rounded-lg dark:bg-gray-800 hover:text-gray-500 hover:shadow-xs transition-all duration-300 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
         Sort by {{ sort }}
       </button>
       <ul
         *ngIf="isSortOpen"
-        class="absolute z-10 top-10 left-0 bg-white dark:bg-gray-800 rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
+        class="absolute left-0 z-10 w-40 mt-2 overflow-hidden bg-white rounded-lg shadow-lg top-10 dark:bg-gray-800"
       >
         <li
           *ngFor="let field of fields; let i = index"
           (click)="setSort(i)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
+          class="flex items-center justify-between px-4 py-2 text-sm text-gray-800 hover:bg-green-500 hover:text-white dark:text-gray-200"
         >
           <span class="pr-4 capitalize">{{ field }}</span>
         </li>
@@ -58,23 +58,23 @@
           'text-white': isOrderOpen,
           'border-green-400': order != null
         }"
-        class="block rounded-lg border-2 bg-white dark:bg-gray-800 text-gray-400 hover:text-gray-500 hover:shadow-xs transition-all duration-300 text-sm px-4 py-2 focus:border-green-400 active:border-green-400 focus:outline-none"
+        class="block px-4 py-2 text-sm text-gray-400 bg-white border-2 rounded-lg dark:bg-gray-800 hover:text-gray-500 hover:shadow-xs transition-all duration-300 focus:border-green-400 active:border-green-400 focus:outline-none"
       >
         Order by {{ order }}
       </button>
       <ul
         *ngIf="isOrderOpen"
-        class="absolute z-10 top-10 left-0 bg-white dark:bg-gray-800 rounded-lg w-40 mt-2 overflow-hidden shadow-lg"
+        class="absolute left-0 z-10 w-40 mt-2 overflow-hidden bg-white rounded-lg shadow-lg top-10 dark:bg-gray-800"
       >
         <li
           (click)="setOrder(0)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
+          class="flex items-center justify-between px-4 py-2 text-sm text-gray-800 hover:bg-green-500 hover:text-white dark:text-gray-200"
         >
           <span class="pr-4 capitalize">Ascending</span>
         </li>
         <li
           (click)="setOrder(1)"
-          class="px-4 py-2 text-gray-800 text-sm hover:bg-green-500 hover:text-white flex items-center justify-between dark:text-gray-200"
+          class="flex items-center justify-between px-4 py-2 text-sm text-gray-800 hover:bg-green-500 hover:text-white dark:text-gray-200"
         >
           <span class="pr-4 capitalize">Descending</span>
         </li>

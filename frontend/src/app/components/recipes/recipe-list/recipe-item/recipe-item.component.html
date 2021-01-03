@@ -1,10 +1,10 @@
 <div
-  class="cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex flex-col justify-between"
+  class="flex flex-col justify-between cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
 >
-  <div class="pb-5/6 relative rounded-lg">
+  <div class="relative rounded-lg pb-5/6">
     <img
       #img
-      class="imgCard absolute w-full h-full object-cover object-center focus:outline-none rounded-lg shadow-md"
+      class="absolute object-cover object-center w-full h-full rounded-lg shadow-md imgCard focus:outline-none"
       alt="{{ recipe.name }}"
       [src]="recipe.imagePath"
       onerror="this.onerror=null;this.src='/assets/img/recipe-placeholder.jpg';"
@@ -14,16 +14,16 @@
   </div>
   <div class="relative px-4 -mt-16">
     <div
-      class="p-6 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl rounded-lg"
+      class="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 hover:shadow-xl"
     >
       <h4
-        class="font-semibold text-lg leading-tight focus:outline-none"
+        class="text-lg font-semibold leading-tight focus:outline-none"
         [routerLink]="'/recipes/' + recipe.id"
       >
         {{ recipe.name | titleShortener: 20 }}
       </h4>
       <div
-        class="mt-4 text-gray-600 dark:text-gray-200 text-xs uppercase font-semibold tracking-wide"
+        class="mt-4 text-xs font-semibold tracking-wide text-gray-600 uppercase dark:text-gray-200"
       >
         {{ recipe.duration }} mins &bull;
         {{ recipe.ingredients | recipeCounter }} &bull;
@@ -32,7 +32,7 @@
 
       <div class="flex items-center mt-4">
         <svg
-          class="w-4 h-4 text-pink-600 fill-current mr-2"
+          class="w-4 h-4 mr-2 text-pink-600 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"

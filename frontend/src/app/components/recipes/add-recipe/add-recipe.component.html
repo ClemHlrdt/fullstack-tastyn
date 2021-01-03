@@ -3,79 +3,79 @@
 </div>
 <div *ngIf="!isLoading" class="flex">
   <img
-    class="flex-shrink hidden lg:block leftImg object-cover lg:w-2/5 h-auto"
+    class="flex-shrink hidden object-cover h-auto lg:block leftImg lg:w-2/5"
     [lazyLoad]="leftImg"
     alt="kitchen counter"
   />
 
   <div
-    class="bg-white dark:bg-gray-900 container mx-auto lg:w-3/5 text-gray-900 p-6"
+    class="container p-6 mx-auto text-gray-900 bg-white dark:bg-gray-900 lg:w-3/5"
   >
     <h1
-      class="text-center text-5xl mt-4 mb-8 font-light dark:text-white"
+      class="mt-4 mb-8 text-5xl font-light text-center dark:text-white"
       *ngIf="!isEditMode"
     >
       New Recipe
     </h1>
     <h1
-      class="text-center text-5xl mt-4 mb-8 font-light dark:text-white"
+      class="mt-4 mb-8 text-5xl font-light text-center dark:text-white"
       *ngIf="isEditMode"
     >
       Update relight
     </h1>
     <form
-      class="mx-auto w-full max-w-xl min-w-min-content"
+      class="w-full max-w-xl mx-auto min-w-min-content"
       [formGroup]="recipe"
       (ngSubmit)="onSubmit()"
     >
       <!--Recipe name & duration -->
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full lg:w-1/2 px-4 mb-6 md:mb-0">
+      <div class="flex flex-wrap mb-6 -mx-3">
+        <div class="w-full px-4 mb-6 lg:w-1/2 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-recipe-name"
           >
             Recipe name
           </label>
           <input
             formControlName="name"
-            class="appearance-none block w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900"
+            class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900"
             id="grid-recipe-name"
             type="text"
             placeholder="Spaghetti Carbonara"
           />
-          <!-- <p class="text-red-500 text-xs italic">
+          <!-- <p class="text-xs italic text-red-500">
               Please fill out this field.
             </p> -->
         </div>
-        <div class="w-full md:w-1/2 px-3">
+        <div class="w-full px-3 md:w-1/2">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-duration"
           >
             Duration
           </label>
           <input
             formControlName="duration"
-            class="appearance-none block w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
+            class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
             id="grid-preparation"
             type="number"
             placeholder="10 mins"
           />
-          <p class="text-gray-600 text-xs italic p-1">In minutes</p>
+          <p class="p-1 text-xs italic text-gray-600">In minutes</p>
         </div>
       </div>
       <!-- Preparation -->
-      <div class="flex -mx-3 mb-6">
+      <div class="flex mb-6 -mx-3">
         <div class="w-full px-3">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="preparation"
             >Preparation</label
           >
           <textarea
             formControlName="preparation"
-            class="w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500 resize-none"
+            class="w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded resize-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
             name="preparation"
             id="preparation"
             rows="8"
@@ -84,12 +84,12 @@
       </div>
 
       <div
-        class="flex flex-wrap content-center -mx-3 mb-6"
+        class="flex flex-wrap content-center mb-6 -mx-3"
         formGroupName="ingredient"
       >
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-ingredient"
             >Ingredient</label
           >
@@ -99,13 +99,13 @@
             formControlName="name"
             (keyup)="checkIngredient(ingName.value, ingAmount.value)"
             placeholder="Pasta"
-            class="appearance-none block w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900"
+            class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900"
             #ingName
           />
         </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-quantity"
             >Quantity</label
           >
@@ -115,11 +115,11 @@
             formControlName="amount"
             (keyup)="checkIngredient(ingName.value, ingAmount.value)"
             placeholder="200g"
-            class="appearance-none block w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900"
+            class="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900"
             #ingAmount
           />
         </div>
-        <div class="w-full align-bottom md:w-1/3 px-3 md:mb-0 mb-6 self-end">
+        <div class="self-end w-full px-3 mb-6 align-bottom md:w-1/3 md:mb-0">
           <button
             type="button"
             (click)="onAddIngredient()"
@@ -127,14 +127,14 @@
             [ngClass]="{
               'opacity-50 cursor-not-allowed': !isIngredientValid
             }"
-            class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 mb-3 border border-green-500 hover:border-transparent rounded dark:border-green-300 dark:text-green-300"
+            class="px-4 py-2 mb-3 font-semibold text-green-700 bg-transparent border border-green-500 rounded hover:bg-green-500 hover:text-white hover:border-transparent dark:border-green-300 dark:text-green-300"
           >
             Add
           </button>
         </div>
         <ul class="flex flex-wrap mb-6">
           <li
-            class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full m-1 text-sm"
+            class="px-4 py-2 m-1 text-sm font-bold text-white bg-green-500 rounded-full hover:bg-green-700"
             *ngFor="let ingredient of ingredients; let i = index"
             (click)="onDeleteIngredient(ingredient.name)"
           >
@@ -144,39 +144,39 @@
       </div>
 
       <!-- Image url input -->
-      <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="flex flex-wrap mb-6 -mx-3">
         <div class="w-full px-3">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-image"
           >
             Image url
           </label>
           <input
             formControlName="imagePath"
-            class="appearance-none block w-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
+            class="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
             id="grid-image"
             type="text"
             placeholder="https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
           />
-          <p class="text-gray-600 text-xs italic p-1">Optional</p>
+          <p class="p-1 text-xs italic text-gray-600">Optional</p>
         </div>
       </div>
 
       <!-- Information about the recipe-->
 
       <!--Difficulty -->
-      <div class="flex flex-wrap -mx-3 mb-8">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <div class="flex flex-wrap mb-8 -mx-3">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-difficulty"
           >
             Difficulty
           </label>
           <div class="relative">
             <select
-              class="block appearance-none w-full bg-gray-200 dark:bg-gray-800 border border-gray-200 text-gray-700 dark:text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
+              class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
               id="grid-difficulty"
               name="difficulty"
               formControlName="difficulty"
@@ -189,10 +189,10 @@
               <option [ngValue]="5">Expert</option>
             </select>
             <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200"
+              class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none dark:text-gray-200"
             >
               <svg
-                class="fill-current h-4 w-4"
+                class="w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -205,16 +205,16 @@
         </div>
 
         <!--Serving -->
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-difficulty"
           >
             Serving
           </label>
           <div class="relative">
             <select
-              class="block appearance-none w-full bg-gray-200 dark:bg-gray-800 border border-gray-200 text-gray-700 dark:text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
+              class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
               id="grid-serving"
               name="serving"
               formControlName="serving"
@@ -227,10 +227,10 @@
               <option [ngValue]="5">5</option>
             </select>
             <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200"
+              class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none dark:text-gray-200"
             >
               <svg
-                class="fill-current h-4 w-4"
+                class="w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -242,16 +242,16 @@
           </div>
         </div>
         <!-- Pricing -->
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
           <label
-            class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+            class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase dark:text-gray-200"
             for="grid-serving"
           >
             Pricing
           </label>
           <div class="relative">
             <select
-              class="block appearance-none w-full bg-gray-200 dark:bg-gray-800 border border-gray-200 text-gray-700 dark:text-gray-200 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
+              class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none dark:bg-gray-800 dark:text-gray-200 focus:outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-gray-500"
               id="grid-pricing"
               name="pricing"
               formControlName="pricing"
@@ -264,10 +264,10 @@
               <option [ngValue]="5">$$$$$</option>
             </select>
             <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200"
+              class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none dark:text-gray-200"
             >
               <svg
-                class="fill-current h-4 w-4"
+                class="w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -281,7 +281,7 @@
       </div>
       <div class="flex justify-center md:justify-start">
         <button
-          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
           *ngIf="!isEditMode"
           type="submit"
           [ngClass]="{
@@ -293,7 +293,7 @@
         </button>
       </div>
       <button
-        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700"
         type="button"
         *ngIf="isEditMode"
         (click)="onUpdate()"

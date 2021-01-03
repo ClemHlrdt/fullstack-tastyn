@@ -1,20 +1,20 @@
-<div class="mt-8 text-gray-700 mx-auto max-w-screen-lg">
+<div class="mx-auto mt-8 text-gray-700 max-w-screen-lg">
   <div *ngFor="let comment of comments">
-    <div class="flex md:rounded-lg p-6 bg-white mb-4 shadow dark:bg-gray-900">
+    <div class="flex p-6 mb-4 bg-white shadow md:rounded-lg dark:bg-gray-900">
       <img
-        class="w-16 h-16 rounded-full mx-0 mr-6"
+        class="w-16 h-16 mx-0 mr-6 rounded-full"
         src="{{ comment.user.avatar }}"
         onerror="this.onerror=null;this.src='/assets/img/avatar.png';"
         alt="Avatar of the user"
       />
 
-      <div class="text-left flex-1">
+      <div class="flex-1 text-left">
         <h4
-          class="text-lg capitalize mb-3 text-gray-600 font-medium dark:text-gray-100"
+          class="mb-3 text-lg font-medium text-gray-600 capitalize dark:text-gray-100"
         >
           {{ comment.user.username }}
         </h4>
-        <p class="text-md text-gray-600 mr-4 dark:text-gray-300">
+        <p class="mr-4 text-gray-600 text-md dark:text-gray-300">
           {{ comment.comment }}
         </p>
       </div>
@@ -23,7 +23,7 @@
         class="flex items-start"
       >
         <svg
-          class="w-6 text-gray-500 mr-1 cursor-pointer"
+          class="w-6 mr-1 text-gray-500 cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
