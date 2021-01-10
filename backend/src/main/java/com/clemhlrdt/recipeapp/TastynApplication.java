@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import java.util.TimeZone;
 
 @SpringBootApplication
-public class RecipeRestAppApplication {
+public class TastynApplication {
 
 	@PostConstruct
 	void init() {
@@ -15,7 +15,7 @@ public class RecipeRestAppApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(RecipeRestAppApplication.class, args);
+		SpringApplication.run(TastynApplication.class, args);
 	}
 }
 

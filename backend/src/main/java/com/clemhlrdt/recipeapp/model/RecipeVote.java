@@ -5,10 +5,10 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
 @EqualsAndHashCode()
 public class RecipeVote {

@@ -124,12 +124,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-		<!--<dependency>
-			<groupId>com.clemhlrdt</groupId>
-			<artifactId>recipe-app</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>-->
 	</dependencies>
 
 	<build>

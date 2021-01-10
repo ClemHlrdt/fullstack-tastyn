@@ -59,7 +59,7 @@ public class AuthController {
 		return ResponseEntity.ok(jwtAuthenticationResponse);
 	}
 
-	@PostMapping("/updatepassword")
+	@PostMapping("/update-password")
 	public ResponseEntity<UserDto> updateUserPassword(@Valid @RequestBody PasswordUpdateRequest passwordUpdateRequest){
 		return ResponseEntity
 						.status(HttpStatus.OK)
