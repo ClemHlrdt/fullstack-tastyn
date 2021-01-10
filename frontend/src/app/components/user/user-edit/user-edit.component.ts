@@ -26,6 +26,7 @@ import { UserService } from 'src/app/services/user/user.service';
   styleUrls: ['./user-edit.component.scss'],
 })
 export class UserEditComponent implements OnInit, OnDestroy {
+  public static readonly FILE_SIZE: number = 10_000_000;
   isLoaded: boolean = false;
   isOwner: boolean = true;
 
@@ -79,7 +80,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
   }
 
   uploadFile(file) {
-    if (file.data.size > 10000000) {
+    if (file.data.size > UserEditComponent.FILE_SIZE) {
       throw 'File too large';
     }
 
