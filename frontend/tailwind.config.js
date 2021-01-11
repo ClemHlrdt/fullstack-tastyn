@@ -22,18 +22,7 @@ module.exports = {
         900: "#180e02"
       },
       gray: colors.gray,
-      red: {
-        50: "#faebef",
-        100: "#f0c2ce",
-        200: "#e699ad",
-        300: "#db708c",
-        400: "#d1476b",
-        500: "#b82e51",
-        600: "#8f243f",
-        700: "#66192d",
-        800: "#3d0f1b",
-        900: "#140509"
-      },
+      red: colors.red,
       green: {
         50: "#eafaf5",
         100: "#c0f1e0",
@@ -49,7 +38,8 @@ module.exports = {
       pink: colors.pink,
       black: colors.black,
       purple: colors.purple,
-      blue: colors.blue
+      blue: colors.blue,
+      transparent: colors.transparent
     },
     extend: {
       spacing: {
@@ -95,8 +85,7 @@ module.exports = {
     },
   },
   future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
+    
   },
   variants: {
     borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
