@@ -1,184 +1,132 @@
-<div
-  id="signup-container"
-  class="container flex items-center justify-center min-h-full mx-auto "
->
+<div id="signup-container" class="container flex items-center justify-center min-h-full mx-auto ">
   <div *ngIf="!isLoaded" style="text-align: center">
     <app-loading-spinner></app-loading-spinner>
   </div>
 
   <div *ngIf="isLoaded" class="w-full max-w-md">
-    <form
-      [formGroup]="form"
-      (ngSubmit)="onSubmit()"
-      class="p-16 space-y-4 bg-white shadow-lg rounded-xl dark:bg-gray-900 "
-    >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()"
+      class="p-16 space-y-4 bg-white shadow-lg rounded-xl dark:bg-gray-900 ">
       <div class="relative" *ngIf="isRegistration">
-        <label
-          class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300"
-          for="username"
-        >
+        <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300" for="username">
           Username <span class="text-red-500">
             *
-        </span>
+          </span>
         </label>
-        <input
-          tabindex="0"
-          formControlName="username"
+        <input tabindex="0" formControlName="username"
           class="w-full px-4 py-2 mb-3 text-gray-700 border border-transparent rounded shadow appearance-none dark:text-gray-300 dark:bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
           [ngClass]="{
             'invalid-input': username.invalid && username.touched
-          }"
-          id="username"
-          type="text"
-          placeholder="username"
-          autocomplete="on"
-        />
-        <svg 
-          *ngIf="username.invalid && username.touched"
-          xmlns="http://www.w3.org/2000/svg" 
-          width="15" 
-          height="15" 
-          fill="currentColor" 
-          [ngClass]="{
-            'invalid-icon': username.invalid && username.touched
-          }"
-          viewBox="0 0 1792 1792">
-            <path d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
-            </path>
+          }" id="username" type="text" placeholder="username" />
+        <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" *ngIf="username.valid && username.touched" [ngClass]="{
+            'valid-icon': username.valid && username.touched}">
+
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
-        <p 
-          *ngIf="username.invalid && username.touched"
-          class="absolute text-xs text-red-500 -bottom-3">
-            Username is invalid
+        <svg *ngIf="username.invalid && username.touched" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+          fill="currentColor" [ngClass]="{
+            'invalid-icon': username.invalid && username.touched
+          }" viewBox="0 0 1792 1792">
+          <path
+            d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
+          </path>
+        </svg>
+        <p *ngIf="username.invalid && username.touched" class="absolute text-xs text-red-500 -bottom-3">
+          Username is invalid
         </p>
-        
+
       </div>
       <div class="relative">
-        <label
-          class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300"
-          for="email"
-        >
+        <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300" for="email">
           Email <span class="text-red-500">
             *
-        </span>
+          </span>
         </label>
-        <input
-          tabindex="0"
-          formControlName="email"
+        <input tabindex="0" formControlName="email"
           class="w-full px-4 py-2 mb-3 text-gray-700 border border-transparent rounded shadow appearance-none dark:text-gray-300 dark:bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
           [ngClass]="{
             'invalid-input': email.invalid && email.touched
-          }"
-          id="email"
-          type="email"
-          placeholder="email"
-          autocomplete="on"
-        />
-        <svg 
-          *ngIf="email.invalid && email.touched"
-          xmlns="http://www.w3.org/2000/svg" 
-          width="15" 
-          height="15" 
-          fill="currentColor" 
-          [ngClass]="{
-            'invalid-icon': email.invalid && email.touched
-          }"
-          viewBox="0 0 1792 1792">
-            <path d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
-            </path>
+          }" id="email" type="email" placeholder="email" />
+        <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" *ngIf="email.valid && email.touched" [ngClass]="{
+                    'valid-icon': email.valid && email.touched}">
+
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
-        <p 
-          *ngIf="email.invalid && email.touched"
-          class="absolute text-xs text-red-500 -bottom-3">
-            Email is invalid
+        <svg *ngIf="email.invalid && email.touched" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+          fill="currentColor" [ngClass]="{
+            'invalid-icon': email.invalid && email.touched
+          }" viewBox="0 0 1792 1792">
+          <path
+            d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
+          </path>
+        </svg>
+
+        <p *ngIf="email.invalid && email.touched" class="absolute text-xs text-red-500 -bottom-3">
+          Email is invalid
         </p>
-        
+
       </div>
+
       <div class="relative">
-        <label
-          class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300"
-          for="password"
-        >
+        <label class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300" for="password">
           Password <span class="text-red-500">
             *
-        </span>
+          </span>
         </label>
-        <input
-          tabindex="0"
-          formControlName="password"
+        <input tabindex="0" formControlName="password"
           class="w-full px-4 py-2 mb-3 text-gray-700 border border-transparent rounded shadow appearance-none dark:text-gray-300 dark:bg-gray-900 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
           [ngClass]="{
             'invalid-input': password.invalid && password.touched
-          }"
-          id="password"
-          type="password"
-          placeholder="password"
-          autocomplete="on"
-        />
-        <svg 
-          *ngIf="password.invalid && password.touched"
-          xmlns="http://www.w3.org/2000/svg" 
-          width="15" 
-          height="15" 
-          fill="currentColor" 
-          [ngClass]="{
-            'invalid-icon': password.invalid && password.touched
-          }"
-          viewBox="0 0 1792 1792">
-            <path d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
-            </path>
+          }" id="password" type="password" placeholder="password" autocomplete="on" />
+        <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" *ngIf="password.valid && password.touched" [ngClass]="{
+                      'valid-icon': password.valid && password.touched}">
+
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>
-        <p 
-          *ngIf="password.invalid && password.touched"
-          class="absolute text-xs text-red-500 -bottom-3">
-            Password is invalid
+        <svg *ngIf="password.invalid && password.touched" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+          fill="currentColor" [ngClass]="{
+            'invalid-icon': password.invalid && password.touched
+          }" viewBox="0 0 1792 1792">
+          <path
+            d="M1024 1375v-190q0-14-9.5-23.5t-22.5-9.5h-192q-13 0-22.5 9.5t-9.5 23.5v190q0 14 9.5 23.5t22.5 9.5h192q13 0 22.5-9.5t9.5-23.5zm-2-374l18-459q0-12-10-19-13-11-24-11h-220q-11 0-24 11-10 7-10 21l17 457q0 10 10 16.5t24 6.5h185q14 0 23.5-6.5t10.5-16.5zm-14-934l768 1408q35 63-2 126-17 29-46.5 46t-63.5 17h-1536q-34 0-63.5-17t-46.5-46q-37-63-2-126l768-1408q17-31 47-49t65-18 65 18 47 49z">
+          </path>
+        </svg>
+        <p *ngIf="password.invalid && password.touched" class="absolute text-xs text-red-500 -bottom-3">
+          Password is invalid
         </p>
-        <span class="inline-block text-xs text-red-500">
-            * required fields
-        </span>
+
       </div>
-      
+      <span class="inline-block text-xs text-red-500">
+        * required fields
+      </span>
       <div class="w-full space-y-6">
-        
-        <button
-          tabindex="0"
+
+        <button tabindex="0"
           class="block w-full px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:ring"
-          type="submit"
-          [disabled]="this.form.invalid"
-          [ngClass]="{
+          type="submit" [disabled]="this.form.invalid" [ngClass]="{
             'opacity-50 cursor-not-allowed': this.form.invalid
-          }"
-        >
+          }">
           {{ isRegistration ? 'Sign Up' : 'Login'}}
         </button>
-        <button
-          tabindex="0"
+        <button tabindex="0"
           class="block w-full px-4 py-2 text-sm font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring"
-          type="button"
-          (click)="handleChangeMode()"
-        >
+          type="button" (click)="handleChangeMode()">
           {{ isRegistration ? 'Already have an account ? Login here' : 'No account yet ? Create one here'}}
         </button>
-        
+
       </div>
-      
+
     </form>
     <p class="mt-2 text-xs text-center text-white">
       &copy;2020 Tastyn. All rights reserved.
     </p>
   </div>
-  <div
-    *ngIf="error"
-    class="px-2 py-4 text-center bg-green-900 notification lg:px-4"
-  >
-    <div
-      class="flex items-center p-2 leading-none text-green-100 bg-green-800 lg:rounded-full lg:inline-flex"
-      role="alert"
-    >
-      <span
-        class="flex px-2 py-1 mr-3 text-xs font-bold uppercase bg-green-500 rounded-full"
-        >Error</span
-      >
+  <div *ngIf="error" class="px-2 py-4 text-center bg-green-900 notification lg:px-4">
+    <div class="flex items-center p-2 leading-none text-green-100 bg-green-800 lg:rounded-full lg:inline-flex"
+      role="alert">
+      <span class="flex px-2 py-1 mr-3 text-xs font-bold uppercase bg-green-500 rounded-full">Error</span>
       <span class="flex-auto mr-2 font-semibold text-left">{{ error }}</span>
     </div>
   </div>
