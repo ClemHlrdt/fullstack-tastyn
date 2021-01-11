@@ -1,37 +1,46 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+  FormControl, FormGroup,
 
-import { AuthService } from 'src/app/services/auth/auth.service';
+  Validators
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
+
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss'],
 })
-export class SignupComponent implements OnInit, OnDestroy {
+export class AuthComponent implements OnInit, OnDestroy {
   isLoaded: boolean = false;
+  isRegistration: boolean = false;
   error: any = null;
   private closeSub: Subscription;
 
-  form = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.maxLength(15),
-    ]),
+  form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
       Validators.maxLength(100),
     ]),
   });
+
+  handleChangeMode() {
+    this.isLoaded = false;
+    this.isRegistration = !this.isRegistration;
+    if (this.isRegistration) {
+      this.form.addControl('username', new FormControl('', [
+        Validators.required,
+        Validators.maxLength(15),
+      ]))
+    } else {
+      this.form.removeControl('username')
+    }
+    this.isLoaded = true;
+  }
 
   get username() {
     return this.form.get('username');
@@ -46,13 +55,14 @@ export class SignupComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.authService.errorSubject.subscribe((errorMessage) => {
       this.error = errorMessage;
       this.isLoaded = true;
     });
+
   }
 
   onSubmit() {
@@ -61,9 +71,14 @@ export class SignupComponent implements OnInit, OnDestroy {
     }
     this.isLoaded = false;
 
-    if (this.form.valid) {
+    if (this.form.valid && this.isRegistration) {
       const { username, email, password } = this.form.value;
       this.authService.signup(username, email, password);
+    }
+
+    if (this.form.valid && !this.isRegistration) {
+      const { email, password } = this.form.value;
+      this.authService.login(email, password);
     }
 
     this.form.reset();
